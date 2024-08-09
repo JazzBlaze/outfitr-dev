@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "outfitr-dev",
-    "slug": "outfitr-dev",
+    "name": "Outfitr",
+    "slug": "outfitr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "outfitr",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
