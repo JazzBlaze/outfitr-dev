@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const closet = () => {
+const ClosetScreen = () => {
   return (
     <View>
       <Text>closet</Text>
@@ -9,6 +9,6 @@ const closet = () => {
   )
 }
 
-export default closet
+export default ClosetScreen
 
 const styles = StyleSheet.create({})
