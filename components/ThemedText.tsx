@@ -6,7 +6,7 @@ import { Text, type TextProps, StyleSheet } from 'react-native';
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  type?: 'default' | 'appTitle' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
 };
 
 export function ThemedText({
@@ -23,6 +23,7 @@ export function ThemedText({
       style={[
         { color },
         type === 'default' ? styles.default : undefined,
+        type === 'appTitle' ? styles.appTitle : undefined,
         type === 'title' ? styles.title : undefined,
         type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
         type === 'subtitle' ? styles.subtitle : undefined,
@@ -47,6 +48,12 @@ const styles = StyleSheet.create({
     fontWeight: 'semibold',
     fontFamily:'productSans'
   },
+  appTitle:{
+    fontSize: 80,
+    fontFamily:'brolimo',
+    letterSpacing:0.5,
+
+  },
   title: {
     fontSize: 32,
     lineHeight: 32,
@@ -54,8 +61,7 @@ const styles = StyleSheet.create({
     letterSpacing:0.5,
   },
   subtitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 24,
     fontFamily:'productSans'
   },
   link: {
