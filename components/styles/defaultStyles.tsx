@@ -3,10 +3,8 @@ import { StyleSheet } from 'react-native'
 
 const DefaultStyles = StyleSheet.create({
     rootContainer: {
-        
         backgroundColor:Colors.background,
         height:'100%',
-
     },
     viewContainer: {
         width:'100%',
@@ -16,9 +14,12 @@ const DefaultStyles = StyleSheet.create({
         height:'100%',
         position:'absolute',
         top:0
-        // paddingLeft:4,
-        // paddingRight:4
     },
+    logoStyle:{
+        color:Colors.text,
+        fontFamily: 'brolimo',
+        fontSize:18
+    }
 })
 
 export default DefaultStyles

@@ -10,6 +10,7 @@ export default function TabLayout() {
 
   return (
     <Tabs
+    
       screenOptions={{
         tabBarShowLabel:false,
         tabBarActiveTintColor: Colors.tint,
@@ -47,7 +48,7 @@ export default function TabLayout() {
         name="explore"
         options={{
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'search' : 'search-outline'} color={color} />
+            <TabBarIcon name={focused ? 'compass' : 'compass-outline'} color={color} />
           ),
         }}
       />
