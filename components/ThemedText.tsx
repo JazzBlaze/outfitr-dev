@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     letterSpacing:0.5,
   },
   subtitle: {
-    fontSize: 19,
+    fontSize: 16,
     color:Colors.subText,
     fontFamily:'productSans'
   },

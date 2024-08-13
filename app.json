@@ -30,7 +30,13 @@
     },
     "plugins": [
       "expo-router",
-      "@react-native-google-signin/google-signin"
+      "@react-native-google-signin/google-signin",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Outfitr to use your location."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": false

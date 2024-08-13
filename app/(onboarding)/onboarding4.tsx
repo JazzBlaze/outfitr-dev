@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, TouchableOpacity, View,Text } from 'react-native'
+import {FlatList, StyleSheet, TouchableOpacity, View,Text,Image } from 'react-native'
 import React from 'react'
 import { router } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -9,18 +9,24 @@ import DefaultButton from '@/components/buttons/defaultButton'
 import { useQuestionnaire } from '@/context/QuestionnaireProvider'
 
 
-const Onboarding2 = () => {
-  const { age_group, updateQuestionnaire } = useQuestionnaire();
+const Onboarding4 = () => {
+  const { price_range, updateQuestionnaire } = useQuestionnaire();
 
-  const ageBands = ['18-25', '26-35', '36-45', '46+'];
+  const priceBands = [
+    "0-599",
+    "600-1499",
+    "1500-2499",
+    "2500-3499",
+    "3500-4499",
+    "4500+",
+  ];
 
-  const handleSelectAgeBand = (ageBand: string) => {
-    console.log(ageBand)
-    updateQuestionnaire({age_group:ageBand});
+  const handleSelectAgeBand = (priceBand: string) => {
+    updateQuestionnaire({price_range:priceBand});
   };
 
   const renderItem = ({ item }: { item: string }) => {
-      const isSelected = age_group === item;
+      const isSelected = price_range === item;
       return (
           <TouchableOpacity
               style={[styles.button, isSelected && styles.selectedButton]}
@@ -39,19 +45,19 @@ const Onboarding2 = () => {
   return (
     <SafeAreaView style={{height:"100%"}} >
       <View style={styles.container}>
-        <ProgressBar bar={2}/>
+        <ProgressBar bar={4}/>
         <View style={{  marginHorizontal:16,marginTop:10,flex:1,justifyContent:'space-between'}}>
 
           <View>
-            <ThemedText type="title">Select Age Group</ThemedText>
-            <ThemedText type="subtitle">This is never made public. We ask to show trending fashion in your demographic</ThemedText>
-            
+            <ThemedText type="title">Price Preferences</ThemedText>
+            <ThemedText type="subtitle">This helps to curate your feed but doesn't set strict limits.</ThemedText>
+        
           </View>
 
           <View style={styles.subContainer}>
               <FlatList
                 style={{width:"100%"}}
-                  data={ageBands}
+                  data={priceBands}
                   renderItem={renderItem}
                   keyExtractor={(item:any) => item}
                   contentContainerStyle={styles.list}
@@ -59,7 +65,7 @@ const Onboarding2 = () => {
           </View>
 
           <View style={{ alignItems:"center",width:'100%',}}>
-            <DefaultButton text='Continue' handlePress={()=>{router.push('/onboarding3')}}/>
+            <DefaultButton text='Continue' handlePress={()=>{router.push('/onboarding5')}}/>
           </View>
         </View>
       </View> 
@@ -67,7 +73,7 @@ const Onboarding2 = () => {
   )
 }
 
-export default Onboarding2
+export default Onboarding4
 
 const styles = StyleSheet.create({
   container:{

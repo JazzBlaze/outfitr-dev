@@ -1,5 +1,5 @@
-import {FlatList, StyleSheet, TouchableOpacity, View,Text } from 'react-native'
-import React from 'react'
+import {Text, StyleSheet, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import { router } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Colors } from '@/constants/Colors'
@@ -7,55 +7,48 @@ import ProgressBar from '@/components/progress/ProgressBar'
 import { ThemedText } from '@/components/ThemedText'
 import DefaultButton from '@/components/buttons/defaultButton'
 import { useQuestionnaire } from '@/context/QuestionnaireProvider'
+import * as Location from 'expo-location';
 
+const Onboarding6 = () => {
+  const { location, updateQuestionnaire } = useQuestionnaire();
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-const Onboarding2 = () => {
-  const { age_group, updateQuestionnaire } = useQuestionnaire();
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
 
-  const ageBands = ['18-25', '26-35', '36-45', '46+'];
+      let locationData = await Location.getCurrentPositionAsync({});
+      let address = await Location.reverseGeocodeAsync(locationData.coords);
 
-  const handleSelectAgeBand = (ageBand: string) => {
-    console.log(ageBand)
-    updateQuestionnaire({age_group:ageBand});
-  };
-
-  const renderItem = ({ item }: { item: string }) => {
-      const isSelected = age_group === item;
-      return (
-          <TouchableOpacity
-              style={[styles.button, isSelected && styles.selectedButton]}
-              onPress={() => handleSelectAgeBand(item)}
-          >
-              <Text style={[styles.buttonText, isSelected && styles.selectedButtonText]}>
-                  {item}
-              </Text>
-          </TouchableOpacity>
-      );
-  };
-
+      if (address.length > 0) {
+        const locationString = `${address[0].city}, ${address[0].region}, ${address[0].country}`;
+        updateQuestionnaire({ location: locationString });
+      }
+    })();
+  }, []);
 
 
 
   return (
     <SafeAreaView style={{height:"100%"}} >
       <View style={styles.container}>
-        <ProgressBar bar={2}/>
+        <ProgressBar bar={6}/>
         <View style={{  marginHorizontal:16,marginTop:10,flex:1,justifyContent:'space-between'}}>
-
           <View>
-            <ThemedText type="title">Select Age Group</ThemedText>
-            <ThemedText type="subtitle">This is never made public. We ask to show trending fashion in your demographic</ThemedText>
-            
+            <ThemedText type="title">Just 1 Quick Thing...</ThemedText>
+            <ThemedText type="subtitle">Please allow location access, this is never made public. We ask to show trending clothes near you.  </ThemedText>
           </View>
 
           <View style={styles.subContainer}>
-              <FlatList
-                style={{width:"100%"}}
-                  data={ageBands}
-                  renderItem={renderItem}
-                  keyExtractor={(item:any) => item}
-                  contentContainerStyle={styles.list}
-              />
+              {errorMsg ? (
+                <Text style={styles.errorText}>{errorMsg}</Text>
+              ) : (
+                <Text style={styles.locationText}>Location: {location || "Fetching location..."}</Text>
+              )}
           </View>
 
           <View style={{ alignItems:"center",width:'100%',}}>
@@ -67,7 +60,7 @@ const Onboarding2 = () => {
   )
 }
 
-export default Onboarding2
+export default Onboarding6
 
 const styles = StyleSheet.create({
   container:{
@@ -109,5 +102,14 @@ const styles = StyleSheet.create({
   },
   selectedButtonText: {
       color: Colors.background,
+  },
+
+  locationText: {
+    fontSize: 18,
+    color: 'black',
+  },
+  errorText: {
+    fontSize: 18,
+    color: 'red',
   },
 })

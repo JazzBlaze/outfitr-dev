@@ -14,25 +14,28 @@ interface Measurements {
 
 interface QuestionnaireContextType {
     gender: string | null;
-    age_group: string;
+    age_group: string | null ;
     preferred_brands: string[];
     price_range: string;
-    measurements: Measurements;
-    fit: string;
+    measurements: Measurements | null;
+    fit: string | null;
     location: string;
     updateQuestionnaire: (newData: Partial<QuestionnaireContextType>) => void;
 }
 
 const defaultState: QuestionnaireContextType = {
     gender: null,
-    age_group: '',
+    age_group: null,
     preferred_brands: [],
     price_range: '',
     measurements: {
-        men: null,
+        men: {
+            chest: 40,
+            waist: 32
+        },
         women: null,
     },
-    fit: '',
+    fit: 'True to Size',
     location: '',
     updateQuestionnaire: () => {},
 };

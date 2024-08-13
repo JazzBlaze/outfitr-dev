@@ -1,3 +1,4 @@
+
 import {FlatList, StyleSheet, TouchableOpacity, View,Text } from 'react-native'
 import React from 'react'
 import { router } from 'expo-router'
@@ -7,31 +8,13 @@ import ProgressBar from '@/components/progress/ProgressBar'
 import { ThemedText } from '@/components/ThemedText'
 import DefaultButton from '@/components/buttons/defaultButton'
 import { useQuestionnaire } from '@/context/QuestionnaireProvider'
+import MeasurementScreen from '@/components/onboarding/MeasurementScreen'
 
 
-const Onboarding2 = () => {
-  const { age_group, updateQuestionnaire } = useQuestionnaire();
+const Onboarding5 = () => {
+  const { updateQuestionnaire } = useQuestionnaire();
 
-  const ageBands = ['18-25', '26-35', '36-45', '46+'];
 
-  const handleSelectAgeBand = (ageBand: string) => {
-    console.log(ageBand)
-    updateQuestionnaire({age_group:ageBand});
-  };
-
-  const renderItem = ({ item }: { item: string }) => {
-      const isSelected = age_group === item;
-      return (
-          <TouchableOpacity
-              style={[styles.button, isSelected && styles.selectedButton]}
-              onPress={() => handleSelectAgeBand(item)}
-          >
-              <Text style={[styles.buttonText, isSelected && styles.selectedButtonText]}>
-                  {item}
-              </Text>
-          </TouchableOpacity>
-      );
-  };
 
 
 
@@ -39,27 +22,30 @@ const Onboarding2 = () => {
   return (
     <SafeAreaView style={{height:"100%"}} >
       <View style={styles.container}>
-        <ProgressBar bar={2}/>
-        <View style={{  marginHorizontal:16,marginTop:10,flex:1,justifyContent:'space-between'}}>
+        <ProgressBar bar={5}/>
+        <View style={{  marginHorizontal:16,marginTop:0,flex:1,justifyContent:'space-between'}}>
+
+          <View style={{marginBottom:10,justifyContent:"flex-end", flexDirection:'row',width:'100%'}}>
+            <TouchableOpacity onPress={()=>{
+              updateQuestionnaire({fit:null,measurements:null})
+              router.push('/onboarding6')
+              }} style={{borderRadius:20,borderWidth:1,borderColor:Colors.text,paddingHorizontal:10}}>
+              <ThemedText type="default">Skip</ThemedText>
+            </TouchableOpacity>
+          </View>
 
           <View>
-            <ThemedText type="title">Select Age Group</ThemedText>
-            <ThemedText type="subtitle">This is never made public. We ask to show trending fashion in your demographic</ThemedText>
-            
+            <ThemedText type="title">Measurements</ThemedText>
+            <ThemedText type="subtitle">Rounded to the nearest inch. Again this is never made public, we will try to show clothes that fits you perfectly!</ThemedText>
           </View>
 
           <View style={styles.subContainer}>
-              <FlatList
-                style={{width:"100%"}}
-                  data={ageBands}
-                  renderItem={renderItem}
-                  keyExtractor={(item:any) => item}
-                  contentContainerStyle={styles.list}
-              />
+            <MeasurementScreen/>
+
           </View>
 
           <View style={{ alignItems:"center",width:'100%',}}>
-            <DefaultButton text='Continue' handlePress={()=>{router.push('/onboarding3')}}/>
+            <DefaultButton text='Continue' handlePress={()=>{router.push('/onboarding6')}}/>
           </View>
         </View>
       </View> 
@@ -67,7 +53,7 @@ const Onboarding2 = () => {
   )
 }
 
-export default Onboarding2
+export default Onboarding5
 
 const styles = StyleSheet.create({
   container:{
@@ -80,8 +66,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
     width:"100%",
+
   },
   list: {
       flexGrow: 1,

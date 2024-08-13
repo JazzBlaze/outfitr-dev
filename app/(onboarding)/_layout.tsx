@@ -42,6 +42,24 @@ const AuthLayout = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="onboarding4"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="onboarding5"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="onboarding6"
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack>
       <StatusBar translucent={true}  backgroundColor={Colors.background} />
       </QuestionnaireProvider>

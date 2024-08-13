@@ -1,4 +1,4 @@
-import { Animated, StyleSheet, Text, View,TouchableWithoutFeedback  } from 'react-native'
+import { Animated, StyleSheet, Text, View, TouchableOpacity  } from 'react-native'
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
@@ -25,18 +25,12 @@ const GenderButton = () => {
     const val:any=genderValue[genderVal]
     const isSelected = gender === genderValue[genderVal];
     return (
-        <TouchableWithoutFeedback style={{flex:1}} onPress={() => setSelectedGender(val)}>
-            <Animated.View
-                style={[
-                    styles.card,
-                    isSelected && styles.selectedCard,
-                    { transform: [{ scale: isSelected ? scaleAnim : 1 }] },
-                ]}
-            >
-                <Ionicons name={genderVal==="Men's Fashion"?'male':genderVal==="Women's Fashion"?'female':'transgender'} size={40} style={[{ marginBottom: -3 , paddingBottom:20}]}  />
-                <Text style={styles.cardText}>{genderVal}</Text>
-            </Animated.View>
-        </TouchableWithoutFeedback >
+        <TouchableOpacity style={[styles.card,
+            isSelected && styles.selectedCard]} onPress={() => setSelectedGender(val)}>
+            <Ionicons color={isSelected?Colors.background:Colors.text} name={genderVal==="Men's Fashion"?'male':genderVal==="Women's Fashion"?'female':'transgender'} size={40} style={[{ marginBottom: -3 , paddingBottom:20}]}  />
+            <Text style={[styles.cardText,isSelected && styles.selectedCardText]}>{genderVal}</Text>
+
+        </TouchableOpacity >
     );
 }
   return (
@@ -52,12 +46,10 @@ export default GenderButton
 
 const styles = StyleSheet.create({
     cardContainer: {
-
         justifyContent: 'space-around', // Evenly space the cards vertically
         paddingHorizontal: 50,
         height:'auto',
         gap:25
-
 
     },
     card: {
@@ -65,23 +57,22 @@ const styles = StyleSheet.create({
         paddingVertical:20,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: Colors.text,
+        backgroundColor: Colors.background,
         borderRadius: 10,
-        shadowColor: '#fff',
-        shadowOffset: { width: 2, height: 10 },
-        shadowOpacity: 0.5,
-        shadowRadius: 5,
-        elevation: 5,
-        borderWidth: 3,
+        borderWidth: 1,
         borderColor: Colors.text,
 
     },
     selectedCard: {
-        borderWidth: 3,
-        borderColor: '#808080', // Change the color to whatever suits your design
+        backgroundColor: Colors.text,
+        borderColor: Colors.background
     },
     cardText: {
         fontSize: 16,
+        color:Colors.text,
+    },
+    selectedCardText: {
+        color:Colors.background,
     },
     
 })

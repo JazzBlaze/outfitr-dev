@@ -26,7 +26,7 @@ const Onboarding1 = () => {
             <ThemedText type="subtitle">Select your preference</ThemedText>
           </View>
 
-          <View style={{marginTop:20}}>
+          <View>
             <GenderButton/>
           </View>
 
