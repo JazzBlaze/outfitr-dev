@@ -4,16 +4,33 @@ import { Colors } from '@/constants/Colors';
 import { TabBarIcon } from '../navigation/TabBarIcon';
 import { router } from 'expo-router';
 
+export type SearchButtonProps =  {
+  state?: 'expanded' | 'default' ;
+  setState:any;
+};
 
-const SearchButton = () => {
+const SearchButton = ({state,setState}:SearchButtonProps) => {
     
   return (
-    <TouchableOpacity
-        onPress={()=>{router.push("")}}
+    <>{
+      state==="default"?
+      <TouchableOpacity
+        onPress={()=>{router.push("/search")}}
         activeOpacity={0.7}
         style={styles.btn}>
         <TabBarIcon name={'search'} color={Colors.tint} />
     </TouchableOpacity>
+    :
+    <TouchableOpacity
+        onPress={()=>{router.push("/search")}}
+        activeOpacity={0.7}
+        style={styles.btnExpanded}>
+        <TabBarIcon name={'search'} color={Colors.tint} />
+        <TabBarIcon name={'close-circle'} color={Colors.tint} />
+    </TouchableOpacity>
+    }
+    </>
+    
   )
 }
 
@@ -26,6 +43,13 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor:Colors.text
     },
+    btnExpanded:{
+      width:'100%',
+      padding:15,
+      borderRadius:50,
+      borderWidth: 2,
+      borderColor:Colors.text
+    }
 
 
 })

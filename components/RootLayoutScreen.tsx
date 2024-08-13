@@ -4,8 +4,8 @@ import {  Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-
-
+import * as SystemUI from 'expo-system-ui';
+SystemUI.setBackgroundColorAsync("black");
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -29,9 +29,14 @@ export default function RootLayoutScreen() {
   
 
   return (
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack  screenOptions={{
+        contentStyle:{
+          backgroundColor:'#000000'
+        }
+     }} >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
   );

@@ -15,6 +15,7 @@ import {
   GoogleSignin,
   statusCodes
 } from '@react-native-google-signin/google-signin';
+
 import { useGlobalContext } from '@/context/GlobalProvider'
 import HomeScreen from './(tabs)/home'
 import axios from 'axios'
@@ -102,9 +103,8 @@ const App = () => {
         <View style={DefaultStyles.viewContainer}>
           <Animated.ScrollView contentContainerStyle={{height:'100%',justifyContent:'flex-end',alignItems:'center',zIndex:999}} style={[animatedBtnContainer,{position:'absolute',zIndex:999}]} >
             <Text style={[styles.subText]}>Build your wardrobe</Text>
-            {/* <Text style={[styles.subText]}>{JSON.stringify(error)}</Text> */}
             <AuthButton handlePress={()=>{signIn()}} btnType={"ghost"} type={"google"} />
-            <AuthButton handlePress={()=>{}} btnType={"default"} type={"apple"} />
+            <AuthButton handlePress={()=>{router.replace('/onboarding1')}} btnType={"default"} type={"apple"} />
           </Animated.ScrollView>
 
           <Animated.Image source={Sources.landingGallery} style={[styles.image,animatedStyle]} resizeMode='contain' />

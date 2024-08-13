@@ -57,11 +57,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     lineHeight: 32,
-    fontFamily:'brolimo',
+    fontFamily:'productSans',
     letterSpacing:0.5,
   },
   subtitle: {
-    fontSize: 24,
+    fontSize: 19,
+    color:Colors.subText,
     fontFamily:'productSans'
   },
   link: {

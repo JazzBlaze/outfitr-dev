@@ -9,14 +9,30 @@ import Swiper from 'react-native-deck-swiper'
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView style={{backgroundColor:Colors.background}}>
+    <SafeAreaView style={{backgroundColor:Colors.background,height:'100%'}}>
       <StatusBar translucent={true} backgroundColor="#000000" />
-      <View style={DefaultStyles.rootContainer}>
+      <View style={{borderWidth:2,borderColor:'#008000',height:'auto'}}>
         <Text style={DefaultStyles.logoStyle}>Outfitr</Text>
-
+        <Text style={DefaultStyles.logoStyle}>Outfitr</Text>
+        <Text style={DefaultStyles.logoStyle}>Outfitr</Text>
+        <Text style={DefaultStyles.logoStyle}>Outfitr</Text>
+        <Text style={DefaultStyles.logoStyle}>Outfitr</Text>
       </View>
+
       <View style={styles.container}>
         <Swiper
+        cardStyle={{
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
+          width: 'auto',
+          height: 'auto',
+          marginVertical:10,
+          marginHorizontal:10,
+        }}
+        containerStyle={styles.swiperContainer}
+          cardVerticalMargin={0}
             cards={['DO', 'MORE', 'OF', 'WHAT', 'MAKES', 'YOU', 'HAPPY']}
             renderCard={(card) => {
                 return (
@@ -28,7 +44,7 @@ const HomeScreen = () => {
             onSwiped={(cardIndex) => {console.log(cardIndex)}}
             onSwipedAll={() => {console.log('onSwipedAll')}}
             cardIndex={0}
-            backgroundColor={'#4FD0E9'}
+            backgroundColor={'#000000'}
             stackSize= {3}>
 
         </Swiper>
@@ -41,20 +57,33 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#F5FCFF"
+    backgroundColor:Colors.background,
+    marginTop:0,
+    paddingTop:0,
+    height:'auto',
+    justifyContent:'flex-start',
+    alignItems:'center',
+    // borderWidth:2,
+    // borderColor:'#008000',
+    flex:1
   },
   card: {
-    flex: 1,
-    borderRadius: 4,
+    height:'100%',
+    borderRadius: 50,
     borderWidth: 2,
     borderColor: "#E8E8E8",
     justifyContent: "center",
-    backgroundColor: "white"
+    backgroundColor: "white",
+    margin:0,
+    padding:0
   },
   text: {
     textAlign: "center",
     fontSize: 50,
     backgroundColor: "transparent"
+  },
+  swiperContainer:{
+    flex:1,
+    backgroundColor:Colors.background,
   }
 });
