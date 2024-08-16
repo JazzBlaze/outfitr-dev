@@ -161,6 +161,7 @@ const styles = StyleSheet.create({
     width:'100%'
   },
   sizeText: {
+    fontFamily:'productSans',
     marginHorizontal: 20,
     fontSize: 80,
     color: Colors.text,
@@ -168,6 +169,7 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
   },
   label: {
+    fontFamily:'productSans',
     fontSize: 20,
     marginBottom: 1,
     textAlign: 'center',
@@ -175,6 +177,7 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
   },
    fitLabel: {
+    fontFamily:'productSans',
     fontSize: 20,
     marginBottom: 1,
     marginTop:40,
@@ -183,6 +186,7 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
   },
   fitSubLabel: {
+    fontFamily:'productSans',
     fontSize: 14,
     marginBottom: 1,
     textAlign: 'center',
@@ -207,6 +211,7 @@ const styles = StyleSheet.create({
     borderColor:Colors.text,
   },
   fitButtonText: {
+    fontFamily:'productSans',
     color: 'black',
     fontSize: 16,
   },

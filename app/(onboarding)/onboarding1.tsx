@@ -18,11 +18,11 @@ const Onboarding1 = () => {
     <SafeAreaView style={{height:"100%"}} >
       <View style={styles.container}>
         <ProgressBar bar={1}/>
-        {/* <ThemedText type="subtitle">Welcome {user.givenName}</ThemedText> */}
+        
         <View style={{  marginHorizontal:16,marginTop:10,flex:1,justifyContent:'space-between'}}>
 
           <View>
-            <ThemedText type="title">Welcome Thejas!</ThemedText>
+          <ThemedText type="title">Welcome {user.givenName}</ThemedText>
             <ThemedText type="subtitle">Select your preference</ThemedText>
           </View>
 

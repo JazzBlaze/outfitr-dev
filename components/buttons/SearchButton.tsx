@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity,Text} from 'react-native'
+import { StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 import { Colors } from '@/constants/Colors';
 import { TabBarIcon } from '../navigation/TabBarIcon';
@@ -6,7 +6,7 @@ import { router } from 'expo-router';
 
 export type SearchButtonProps =  {
   state?: 'expanded' | 'default' ;
-  setState:any;
+  setState?:any;
 };
 
 const SearchButton = ({state,setState}:SearchButtonProps) => {
@@ -15,10 +15,10 @@ const SearchButton = ({state,setState}:SearchButtonProps) => {
     <>{
       state==="default"?
       <TouchableOpacity
-        onPress={()=>{router.push("/search")}}
+        // onPress={()=>{router.push("/search")}}
         activeOpacity={0.7}
         style={styles.btn}>
-        <TabBarIcon name={'search'} color={Colors.tint} />
+        <TabBarIcon  size={35} name={'search'} color={Colors.tint} />
     </TouchableOpacity>
     :
     <TouchableOpacity
@@ -38,10 +38,10 @@ export default SearchButton
 
 const styles = StyleSheet.create({
     btn:{
-        padding:15,
-        borderRadius:100,
-        borderWidth: 2,
-        borderColor:Colors.text
+        padding:5,
+        borderRadius:60/2,
+        // borderWidth: 1,
+        // borderColor:Colors.text
     },
     btnExpanded:{
       width:'100%',

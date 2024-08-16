@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
         borderColor: Colors.background
     },
     cardText: {
+        fontFamily:'productSans',
         fontSize: 16,
         color:Colors.text,
     },

@@ -44,17 +44,36 @@ const App = () => {
     try{
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
+      // console.log(userInfo)
       setUser(userInfo.user);
-      const response = await axios.post(`${baseUrl}/newUser`, {
-        id:userInfo.user.id,
-        name:userInfo.user.givenName,
-        email:userInfo.user.email,
-      });
-      console.log(userInfo)
-      router.replace('/(tabs)/home')
+      try{
+        const response = await axios.post(`https://outfitr-dev-backend.onrender.com/newUser`, {
+          userId:userInfo.user.id,
+          name:userInfo.user.givenName,
+          email:userInfo.user.email,
+        });
+
+        // console.log(userInfo)
+        console.log(response)
+
+        if (response.data.message ==="User already exists"){
+          console.log("User already exists")
+          router.replace('/home')
+        }else{
+          router.replace('/onboarding1')
+          
+          
+        }
+
+      }catch(e){
+        console.log(e)
+      }
+      
+      
 
     }catch(e){
       setError(e)
+      await GoogleSignin.signOut().then(async ()=>{await GoogleSignin.revokeAccess();});
 
     }
 
@@ -99,7 +118,7 @@ const App = () => {
   
   return (
     <SafeAreaView style={DefaultStyles.rootContainer}>
-      <StatusBar translucent={true} backgroundColor="transparent" />
+      <StatusBar translucent={true}  backgroundColor="transparent"/>
         <View style={DefaultStyles.viewContainer}>
           <Animated.ScrollView contentContainerStyle={{height:'100%',justifyContent:'flex-end',alignItems:'center',zIndex:999}} style={[animatedBtnContainer,{position:'absolute',zIndex:999}]} >
             <Text style={[styles.subText]}>Build your wardrobe</Text>

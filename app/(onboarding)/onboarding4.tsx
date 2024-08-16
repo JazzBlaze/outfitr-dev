@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
       borderColor:Colors.background
   },
   buttonText: {
+    fontFamily:'productSans',
       fontSize: 18,
       color: Colors.text,
   },

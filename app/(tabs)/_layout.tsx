@@ -17,8 +17,8 @@ export default function TabLayout() {
         tabBarActiveBackgroundColor:Colors.background,
         tabBarInactiveBackgroundColor:Colors.background,
         tabBarStyle: {
-          // borderTopWidth: 0,
-          // elevation: 0,
+          borderTopWidth: 0,
+          elevation: 0,
           paddingBottom:10,
           paddingTop:5,
           height:60,
@@ -52,6 +52,14 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="scanner"
+        options={{
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'camera' : 'camera-outline'} color={color} />
+          ),
+        }}
+      />
 
       <Tabs.Screen
         name="cart"
@@ -62,6 +70,7 @@ export default function TabLayout() {
         }}
       />
       
+      
       <Tabs.Screen
         name="account"
         options={{
@@ -70,6 +79,7 @@ export default function TabLayout() {
           ),
         }}
       />
+
     </Tabs>
   );
 }

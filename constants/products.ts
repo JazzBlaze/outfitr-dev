@@ -1,0 +1,723 @@
+interface SizesAvailable {
+  xxs?: boolean;
+  XS?: boolean;
+  S: boolean;
+  M: boolean;
+  L: boolean;
+  XL: boolean;
+  XXL?: boolean;
+}
+
+interface Product {
+  _id: string;
+  seller: string;
+  brand: string;
+  product_url: string;
+  cover_image: string;
+  images: string[];
+  productName: string;
+  sizes_available: SizesAvailable;
+  price: number;
+  primary_colour: string | null;
+  secondary_colour?: string | null;
+  material?: string | null;
+  fit: string;
+  occasion?: string | null;
+  season?: string | null;
+  theme?: string | null;
+  gender: string;
+  pattern?: string | null;
+  master_category: string;
+  sub_category: string;
+  LLM_desc?: string | null;
+  others?: string | null;
+}
+
+export const product_details: Product[] = [
+  {
+    _id: '66bc6c8a31578af80eefc3ea',
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    product_url:
+      'https://www.bonkerscorner.com/product/j-cole-oversized-t-shirt/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2024/07/12131337/Bonkercorner_j.cole_ost01.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2024/07/12131353/Bonkers-Man-26-07-2024-31939.jpg',
+    ],
+    productName: 'J.Cole Oversized T-shirt',
+    sizes_available: {
+      XS: true,
+      S: true,
+      M: true,
+      L: false,
+      XL: false,
+      XXL: false,
+    },
+    price: 799,
+    primary_colour: 'Black',
+    material: '100% cotton',
+    fit: 'Oversized drop shoulder tee',
+    gender: 'men',
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3eb',
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    product_url:
+      'https://www.bonkerscorner.com/product/playboy-club-oversized-t-shirt-2/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2024/03/14101318/Bonkerscorner_-playboy-club-ost_02.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2024/03/14101349/Bonkerscorner_-playboy-club-ost_06.jpg',
+    ],
+    productName: 'Playboy Club Oversized T-shirt',
+    sizes_available: {
+      XS: false,
+      S: false,
+      M: false,
+      L: false,
+      XL: true,
+      XXL: true,
+    },
+    price: 799,
+    primary_colour: 'Beige',
+    material: '100% cotton',
+    fit: 'Oversized drop shoulder tee',
+    gender: 'men',
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3ec',
+    seller: 'Urban Monkey',
+    brand: 'Urban Monkey',
+    product_url:
+      'https://www.urbanmonkey.com/collections/oversized-hip-hop-t-shirts/products/um-vision?section_title=oversized-t-shirts&?section_id=262759841876&?location_id=3',
+    cover_image:
+      'https://www.urbanmonkey.com/cdn/shop/files/um-vision-offwhite-oversized-tshirt-01.jpg?v=1711714670&width=720',
+    images: [
+      'https://www.urbanmonkey.com/cdn/shop/files/um-vision-offwhite-oversized-tshirt-04.jpg?v=1711714670&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/um-vision-offwhite-oversized-tshirt-03.jpg?v=1711714670&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/um-vision-offwhite-oversized-tshirt-05.jpg?v=1711714670&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/um-vision-offwhite-oversized-tshirt-02.jpg?v=1711714670&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/um-vision-offwhite-oversized-tshirt-06.jpg?v=1711714670&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/products/um-vision-model-4.jpg?v=1711714670&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/um-vision-offwhite-oversized-tshirt-07.jpg?v=1711714670&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/products/um-vision-model-6.jpg?v=1711714670&width=720',
+    ],
+    productName: 'UM Vision',
+    sizes_available: {
+      XS: false,
+      S: false,
+      M: false,
+      L: false,
+      XL: false,
+      XXL: false,
+    },
+    price: 1200,
+    primary_colour: 'off-white',
+    material: '100% cotton',
+    fit: 'oversized fit',
+    gender: 'unisex',
+    master_category: 'apparels',
+    sub_category: 'oversized T-shirt',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3ed',
+    seller: 'H&M',
+    brand: 'H&M',
+    product_url: 'https://www2.hm.com/en_in/productpage.1228206003.html',
+    cover_image:
+      'https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Ff1%2F91%2Ff191b54dea4ab769b062b9c247ca7999405745c6.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]',
+    images: [
+      'https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F1c%2F0e%2F1c0ea3b45b610d8900e76752d515d71125ad9481.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D',
+      'https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F9b%2F74%2F9b7425c426a69583bff51b77f143baaf52aaa521.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D',
+      'https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Ff2%2F8f%2Ff28f9f27ce782adfa8fe20d199c342d40d2a3a6b.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D',
+      'https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F97%2Fbc%2F97bc59367ec03d0eca95380192cbf90c05427962.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D',
+      'https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F0c%2F67%2F0c67701d95185383612e415f512883a113a37b19.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D',
+      'https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F82%2F52%2F82523c8a90089a3261b1625190b44d719e6d6c94.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVEDETAIL%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D',
+    ],
+    productName: 'Relaxed Fit Cargo trousers',
+    sizes_available: {
+      XS: true,
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+      XXL: true,
+    },
+    price: 2299,
+    primary_colour: 'Light beige',
+    material: 'Cotton, Twill',
+    fit: 'relaxed fit',
+    gender: 'men',
+    master_category: 'apparels',
+    sub_category: 'cargo pants',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3ee',
+    seller: 'Urban Monkey',
+    brand: 'Urban Monkey',
+    product_url:
+      'https://www.urbanmonkey.com/collections/oversized-hip-hop-t-shirts/products/legacy-t-shirt-002?section_title=oversized-t-shirts&?section_id=262759841876&?location_id=13',
+    cover_image:
+      'https://www.urbanmonkey.com/cdn/shop/files/legacy-acid-wash-boxy-tshirt-01.jpg?v=1711853292&width=720',
+    images: [
+      'https://www.urbanmonkey.com/cdn/shop/files/legacy-acid-wash-boxy-tshirt-02.jpg?v=1711853292&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/legacy-acid-wash-boxy-tshirt-03.jpg?v=1711853292&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/legacy-acid-wash-boxy-tshirt-05.jpg?v=1711853292&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/legacy-acid-wash-boxy-tshirt-04.jpg?v=1711853292&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/legacy-acid-wash-boxy-tshirt-06.jpg?v=1711853292&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/legacy-acid-wash-boxy-tshirt-07.jpg?v=1711853292&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/URBANMONKEY06_11_231635.jpg?v=1711853292&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/URBANMONKEY06_11_231642.jpg?v=1711853292&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/URBANMONKEY06_11_2312848.jpg?v=1711853292&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/URBANMONKEY06_11_2312871.jpg?v=1711853292&width=720',
+    ],
+    productName: 'Legacy T-shirt // 002',
+    sizes_available: {
+      XS: false,
+      S: false,
+      M: false,
+      L: false,
+      XL: false,
+      XXL: false,
+    },
+    price: 1500,
+    primary_colour: 'black',
+    material: '80% cotton 20% polyester',
+    fit: 'oversized fit',
+    gender: 'unisex',
+    master_category: 'apparels',
+    sub_category: 'oversized T-shirt',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3ef',
+    seller: 'Urban Monkey',
+    brand: 'Urban Monkey',
+    product_url:
+      'https://www.urbanmonkey.com/collections/bottoms/products/rip-stop-cargo-pant-black?section_title=bottoms&?section_id=265524707412&?location_id=2',
+    cover_image:
+      'https://www.urbanmonkey.com/cdn/shop/files/J2A3947.jpg?v=1721616471&width=720',
+    images: [
+      'https://www.urbanmonkey.com/cdn/shop/files/J2A3975.jpg?v=1721616472&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/J2A3964.jpg?v=1721616471&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/J2A3952.jpg?v=1721616471&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/J2A3954.jpg?v=1721616471&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/J2A3957.jpg?v=1721616471&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/J2A3967.jpg?v=1721616472&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/J2A3981.jpg?v=1721616471&width=720',
+    ],
+    productName: 'Ripstop Wide Leg Cargo Pants // Black',
+    sizes_available: {
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+      XXL: true,
+    },
+    price: 1850,
+    primary_colour: 'black',
+    material: '5% polyester + 35% cotton ripstop',
+    fit: 'wide fit',
+    gender: 'unisex',
+    master_category: 'apparels',
+    sub_category: 'Pants',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f0',
+    seller: 'Nike',
+    brand: 'Nike',
+    product_url:
+      'https://www.nike.com/in/t/dunk-low-retro-shoes-69h36X/DV0831-111',
+    cover_image:
+      'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/592e950d-3b3e-4cf3-8411-3e084f32cf49/NIKE+DUNK+LOW+RETRO.png',
+    images: [
+      'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8906707c-36a2-4a8d-8385-2a52e4402cf0/NIKE+DUNK+LOW+RETRO.png',
+      'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f17cb3dc-694d-46dc-9623-65fb88a25b6e/NIKE+DUNK+LOW+RETRO.png',
+      'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/114cbe87-ba9d-499d-b25f-0524f40c1e89/NIKE+DUNK+LOW+RETRO.png',
+    ],
+    productName: 'Nike Dunk Low Retro',
+    sizes_available: {
+      XS: true,
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+      XXL: true,
+    },
+    price: 9695,
+    primary_colour: 'Summit White/Platinum Tint/White/Midnight Navy',
+    material: 'Genuine leather',
+    fit: 'regular',
+    gender: 'unisex',
+    master_category: 'accessories',
+    sub_category: 'shoes',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f1',
+    seller: 'Urban Monkey',
+    brand: 'Urban Monkey',
+    product_url:
+      'https://www.urbanmonkey.com/collections/cargo-pants/products/core-parachute-pants-002?section_title=cargo-pants&?section_id=466211635481&?location_id=13',
+    cover_image:
+      'https://www.urbanmonkey.com/cdn/shop/files/core-parachute-pants-blue-10.jpg?v=1698028417&width=720',
+    images: [
+      'https://www.urbanmonkey.com/cdn/shop/files/core-parachute-pants-blue-01.jpg?v=1698028417&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/core-parachute-pants-blue-03.jpg?v=1698028417&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/core-parachute-pants-blue-05.jpg?v=1698028417&width=720',
+    ],
+    productName: 'Core Parachute Pants // 002',
+    sizes_available: {
+      S: false,
+      M: false,
+      L: false,
+      XL: false,
+    },
+    price: 2000,
+    primary_colour: 'skydiver blue/greyish blue',
+    material: '5% polyester 45% nylon',
+    fit: 'relaxed',
+    gender: 'unisex',
+    master_category: 'apparels',
+    sub_category: 'Pants',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f2',
+    seller: 'Suffire',
+    brand: 'Suffire',
+    product_url: 'https://suffire.in/collections/necklace/products/matrix',
+    cover_image:
+      'https://suffire.in/cdn/shop/files/matrix1_540x.jpg?v=1713558580',
+    images: [
+      'https://suffire.in/cdn/shop/files/matrix2_540x.jpg?v=1713558580',
+      'https://suffire.in/cdn/shop/files/matrix3_540x.jpg?v=1713558580',
+      'https://suffire.in/cdn/shop/files/IMG-1882_540x.jpg?v=1713558580',
+      'https://suffire.in/cdn/shop/files/IMG-1883_540x.jpg?v=1713558580',
+      'https://suffire.in/cdn/shop/files/IMG-1913_540x.jpg?v=1713558580',
+    ],
+    productName: 'MATRIX',
+    sizes_available: {
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+    },
+    price: 799,
+    primary_colour: null,
+    material: 'stainless steel',
+    fit: 'relaxed fit',
+    gender: 'unisex',
+    master_category: 'apparels',
+    sub_category: 'pendant',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f3',
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    product_url:
+      'https://www.bonkerscorner.com/product/travis-scott-faded-oversized-t-shirt/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2021/08/12131709/Bonkercorner_travis_scott_ost1.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2021/08/12131728/Bonkercorner_travis_scott_ost4.jpg',
+    ],
+    productName: 'Travis Scott Faded Oversized T-shirt',
+    sizes_available: {
+      xxs: false,
+      XS: true,
+      S: true,
+      M: true,
+      L: true,
+      XL: false,
+      XXL: false,
+    },
+    price: 699,
+    primary_colour: 'Black Faded',
+    material: '100% premium cotton',
+    fit: 'Oversized drop shoulder tee',
+    gender: 'men',
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f4',
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    product_url:
+      'https://www.bonkerscorner.com/product/bottle-green-kid-cudi-oversized-t-shirt-2/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2024/03/16111937/Bonkerscorner_Bottle-green-kid-cudi_02.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2024/03/16112034/Bonkerscorner_Bottle-green-kid-cudi_014.jpg',
+    ],
+    productName: 'Bottle Green Kid Cudi Oversized T-shirt',
+    sizes_available: {
+      XS: true,
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+      XXL: true,
+    },
+    price: 799,
+    primary_colour: 'Bottle Green',
+    material: '100% cotton',
+    fit: 'Oversized drop shoulder tee',
+    gender: 'men',
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f5',
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    product_url:
+      'https://www.bonkerscorner.com/product/cherry-playboy-oversized-t-shirt-2/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2024/03/14095419/Bonkerscorner_cherry_playboy_ost1.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2024/03/14095452/Bonkerscorner_cherry_playboy_ost2.jpg',
+    ],
+    productName: 'Cherry Playboy Oversized T-shirt',
+    sizes_available: {
+      XS: true,
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+      XXL: true,
+    },
+    price: 799,
+    primary_colour: 'Black',
+    material: '100% cotton',
+    fit: 'Oversized drop shoulder tee',
+    gender: 'men',
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f6',
+    seller: 'Veg NonVeg',
+    brand: 'Nike',
+    product_url:
+      'https://www.vegnonveg.com/products/nike-dunk-low-retro-whiteblack-white',
+    cover_image:
+      'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b1bcbca4-e853-4df7-b329-5be3c61ee057/NIKE+DUNK+LOW+RETRO.png',
+    images: [
+      'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e863ca32-5f23-49eb-9ee6-da62958650f9/NIKE+DUNK+LOW+RETRO.png',
+      'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2f7301c8-1550-4207-8360-0490266cf821/NIKE+DUNK+LOW+RETRO.png',
+      'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8083f2f-0933-4c11-9438-5497d751ce62/NIKE+DUNK+LOW+RETRO.png',
+      'https://www.nike.com/in/t/dunk-low-retro-shoe-66RGqF',
+    ],
+    productName: "DUNK LOW RETRO 'WHITE/BLACK'",
+    sizes_available: {
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+    },
+    price: 8295,
+    primary_colour: 'whie/black',
+    material: 'Genuine leather',
+    fit: 'relaxed fit',
+    gender: 'unisex',
+    master_category: 'accessories',
+    sub_category: 'shoes',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f7',
+    seller: 'Urban Monkey',
+    brand: 'Urban Monkey',
+    product_url:
+      'https://www.urbanmonkey.com/collections/oversized-hip-hop-t-shirts/products/daily-reminder-002?section_title=oversized-t-shirts&?section_id=262759841876&?location_id=8',
+    cover_image:
+      'https://www.urbanmonkey.com/cdn/shop/files/daily-reminder-black-oversized-grapic-tshirt-01.jpg?v=1711751360&width=720',
+    images: [
+      'https://www.urbanmonkey.com/cdn/shop/files/daily-reminder-black-oversized-grapic-tshirt-02.jpg?v=1711751360&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/daily-reminder-black-oversized-grapic-tshirt-03.jpg?v=1711751360&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/daily-reminder-black-oversized-grapic-tshirt-05.jpg?v=1711751360&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/daily-reminder-black-oversized-grapic-tshirt-04.jpg?v=1711751360&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/daily-reminder-black-oversized-grapic-tshirt-06.jpg?v=1711751377&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/daily-reminder-black-oversized-grapic-tshirt-07.jpg?v=1711751377&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/daily-reminder-2-black-10.jpg?v=1711751377&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/daily-reminder-2-black-11.jpg?v=1711751377&width=720',
+    ],
+    productName: 'Daily Reminder // 002',
+    sizes_available: {
+      XS: false,
+      S: false,
+      M: false,
+      L: true,
+      XL: false,
+      XXL: false,
+    },
+    price: 999,
+    primary_colour: 'black',
+    material: '100% cotton',
+    fit: 'oversized fit',
+    gender: 'unisex',
+    master_category: 'apparels',
+    sub_category: 'oversized T-shirt',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f8',
+    seller: 'Urban Monkey',
+    brand: 'Urban Monkey',
+    product_url:
+      'https://www.urbanmonkey.com/collections/oversized-hip-hop-t-shirts/products/life-is-better-when-you-paint?section_title=oversized-t-shirts&?section_id=262759841876&?location_id=11',
+    cover_image:
+      'https://www.urbanmonkey.com/cdn/shop/files/life-is-better-when-you-paint-tshirt-01.jpg?v=1711682689&width=720',
+    images: [
+      'https://www.urbanmonkey.com/cdn/shop/files/life-is-better-when-you-paint-tshirt-03.jpg?v=1711682689&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/life-is-better-when-you-paint-tshirt-02.jpg?v=1711682689&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/life-is-better-when-you-paint-tshirt-04.jpg?v=1711682689&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/life-is-better-when-you-paint-tshirt-06_69e683ef-c1a8-4977-b738-f4e7a7f06d67.jpg?v=1711695495&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/life-is-better-when-you-paint-tshirt-05.jpg?v=1711695495&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/life-is-better-when-you-paint-tshirt-07_d8eb425e-5f48-4435-bf39-56ebbb7d8873.jpg?v=1711695495&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/products/life-is-better-when-you-paint-14.jpg?v=1711695495&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/products/life-is-better-when-you-paint-12.jpg?v=1711695495&width=720',
+      'https://www.urbanmonkey.com/cdn/shop/files/preview_images/1903fa06314b4f019b104bb9d35eb9c3.thumbnail.0000000000.jpg?v=1685788214&width=720',
+    ],
+    productName: 'life is better when you paint',
+    sizes_available: {
+      XS: false,
+      S: false,
+      M: false,
+      L: false,
+      XL: false,
+      XXL: false,
+    },
+    price: 1200,
+    primary_colour: null,
+    material: null,
+    fit: 'box fit',
+    gender: 'unisex',
+    master_category: 'apparels',
+    sub_category: 'oversized fit - um x doodle mapuls',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3f9',
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    product_url:
+      'https://www.bonkerscorner.com/product/black-parachute-pants-2/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2022/12/30184229/Black-parachute-pants-2-1200x1800.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2022/12/30184235/Black-parachute-pants--1200x1800.jpg',
+    ],
+    productName: 'Black Parachute Pants',
+    sizes_available: {
+      XS: true,
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+      XXL: true,
+    },
+    price: 999,
+    primary_colour: null,
+    material: null,
+    fit: 'relaxed fit',
+    gender: 'men',
+    master_category: 'apparels',
+    sub_category: 'Parachute Pants',
+  },
+  {
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    _id: '2946080',
+    product_url:
+      'https://www.bonkerscorner.com/product/black-wingman-oversized-t-shirt/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2021/10/22132840/wingman-black1-1-1200x1800.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2022/03/19181609/Bonkerscorner_wingmen_black_08.jpg',
+      'https://assets.bonkerscorner.com/uploads/2022/03/19181625/Bonkerscorner_wingmen_black_02.jpg',
+      'https://assets.bonkerscorner.com/uploads/2022/03/19181615/Bonkerscorner_wingmen_black_09.jpg',
+    ],
+    productName: 'Black Wingman Oversized T-Shirt',
+    sizes_available: {
+      xxs: false,
+      XS: false,
+      S: true,
+      M: true,
+      L: true,
+      XL: false,
+      XXL: false,
+    },
+    price: 699,
+    primary_colour: 'Black',
+    secondary_colour: null,
+    material: '100% cotton',
+    fit: 'Oversized drop shoulder tee',
+    occasion: null,
+    season: null,
+    theme: null,
+    gender: 'men',
+    pattern: null,
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+    LLM_desc: null,
+    others: null,
+  },
+    {
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    _id: '2946081',
+    product_url:
+      'https://www.bonkerscorner.com/product/orange-wingman-oversized-t-shirt/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2021/10/22133008/wingman-orange-1-2.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2021/10/22133002/wingman-orange-1-1.jpg',
+      'https://assets.bonkerscorner.com/uploads/2022/03/22101326/Bonkerscorner_wingmen_orange_01.jpg',
+      'https://assets.bonkerscorner.com/uploads/2022/03/22101321/Bonkerscorner_wingmen_orange_07.jpg',
+    ],
+    productName: 'Orange Wingman Oversized T-Shirt',
+    sizes_available: {
+      xxs: false,
+      XS: true,
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+      XXL: true,
+    },
+    price: 699,
+    primary_colour: 'orange',
+    secondary_colour: null,
+    material: '100% cotton',
+    fit: 'Oversized drop shoulder tee',
+    occasion: null,
+    season: null,
+    theme: null,
+    gender: 'men',
+    pattern: null,
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+    LLM_desc: null,
+    others: null,
+  },
+  {
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    _id: '2946082',
+    product_url:
+      'https://www.bonkerscorner.com/product/lilac-wingman-oversized-t-shirt/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2022/03/24141509/Bonkerscorner_wingman_purple_02.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2022/03/24141529/Bonkerscorner_wingman_purple_06.jpg',
+      'https://assets.bonkerscorner.com/uploads/2022/03/24141458/Bonkerscorner_wingman_purple_01.jpg',
+      'https://assets.bonkerscorner.com/uploads/2022/03/24141519/Bonkerscorner_wingman_purple_03.jpg',
+    ],
+    productName: 'Lilac Wingman Oversized T-Shirt',
+    sizes_available: {
+      xxs: false,
+      XS: false,
+      S: false,
+      M: false,
+      L: false,
+      XL: false,
+      XXL: false,
+    },
+    price: 699,
+    primary_colour: 'lilac',
+    secondary_colour: null,
+    material: '100% cotton',
+    fit: 'Oversized drop shoulder tee',
+    occasion: null,
+    season: null,
+    theme: null,
+    gender: 'men',
+    pattern: null,
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+    LLM_desc: null,
+    others: null,
+  },
+
+
+  {
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    _id: '2946083',
+    product_url:
+      'https://www.bonkerscorner.com/product/head-empty-oversized-t-shirt/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2022/11/28141839/20221118_063228000_iOS-2.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2022/11/28141814/20221118_063228000_iOS-4.jpg',
+      'https://assets.bonkerscorner.com/uploads/2022/11/28141831/Bonkerscorner_head_empty_ost06.jpg',
+      'https://assets.bonkerscorner.com/uploads/2022/11/28141859/Bonkerscorner_head_empty_ost02.jpg',
+    ],
+    productName: 'Head Empty Oversized T-shirt',
+    sizes_available: {
+      xxs: false,
+      XS: true,
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+      XXL: true,
+    },
+    price: 699,
+    primary_colour: 'navy',
+    secondary_colour: null,
+    material: '100% cotton',
+    fit: 'Oversized drop shoulder tee',
+    occasion: null,
+    season: null,
+    theme: null,
+    gender: 'men',
+    pattern: null,
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+    LLM_desc: null,
+    others: null,
+  },
+  {
+    seller: 'Bonkers corner',
+    brand: 'Bonkers corner',
+    _id: '2946084',
+    product_url:
+      'https://www.bonkerscorner.com/product/mystical-mushroom-oversized-t-shirt/',
+    cover_image:
+      'https://assets.bonkerscorner.com/uploads/2023/05/29160142/Bonkerscorner_Mistical_02.jpg',
+    images: [
+      'https://assets.bonkerscorner.com/uploads/2023/05/29160144/Bonkerscorner_Mistical_03.jpg',
+      'https://assets.bonkerscorner.com/uploads/2023/05/29160139/Bonkerscorner_Mistical_01.jpg',
+      'https://assets.bonkerscorner.com/uploads/2023/05/29160147/Bonkerscorner_Mistical_04.jpg',
+    ],
+    productName: 'Mystical Mushroom Oversized T-shirt',
+    sizes_available: {
+      xxs: false,
+      XS: true,
+      S: true,
+      M: true,
+      L: true,
+      XL: true,
+      XXL: true,
+    },
+    price: 699,
+    primary_colour: 'black',
+    secondary_colour: null,
+    material: '100% cotton',
+    fit: 'Oversized drop shoulder tee',
+    occasion: null,
+    season: null,
+    theme: null,
+    gender: 'men',
+    pattern: null,
+    master_category: 'apparels',
+    sub_category: 'Oversized T-shirt',
+    LLM_desc: null,
+    others: null,
+  },
+
+];

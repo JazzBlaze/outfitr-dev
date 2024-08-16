@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#fff',
   },
   brand_name: {
+    fontFamily:'productSans',
     fontSize: 12,
     textAlign: 'center',
     marginTop: 5,

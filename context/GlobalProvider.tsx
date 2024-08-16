@@ -40,12 +40,10 @@ const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
       try {
         const userInfo = await GoogleSignin.signInSilently();
         setUser( userInfo.user );
-        console.log(userInfo)
         setIsLogged(true)
         setLoading(false)
       } catch (error:any) {
         if (error.code === statusCodes.SIGN_IN_REQUIRED) {
-          console.log('sign in')
           setLoading(false)
         } else {
           setLoading(false)
@@ -53,7 +51,6 @@ const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
       }
     }else{
       setUser( currentUser.user );
-      console.log(currentUser)
       setIsLogged(true)
       setLoading(false);
     }

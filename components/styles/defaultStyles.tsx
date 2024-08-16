@@ -18,7 +18,9 @@ const DefaultStyles = StyleSheet.create({
     logoStyle:{
         color:Colors.text,
         fontFamily: 'brolimo',
-        fontSize:18
+        letterSpacing:0.5,
+        fontSize:35,
+        alignSelf:'center'
     }
 })
 

@@ -37,6 +37,13 @@ export default function RootLayoutScreen() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
         <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="product/[query]" options={{ headerShown: false }} />
+        <Stack.Screen name="(match)/MagicMatch" options={{ headerShown: false }} />
+        <Stack.Screen name="(match)/Outfit" options={{ headerShown: false }} />
+        <Stack.Screen name="(match)/Similar" options={{ headerShown: false }} />
+        <Stack.Screen name="(scanner)/exact" options={{ headerShown: false }} />
+        <Stack.Screen name="(scanner)/custom" options={{ headerShown: false }} />
+        <Stack.Screen name="(checkout)/checkout" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
   );

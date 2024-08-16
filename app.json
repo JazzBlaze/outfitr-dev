@@ -36,6 +36,12 @@
         {
           "locationAlwaysAndWhenInUsePermission": "Allow Outfitr to use your location."
         }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Outfitr to access your camera"
+        }
       ]
     ],
     "experiments": {

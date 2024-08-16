@@ -14,11 +14,6 @@ import MeasurementScreen from '@/components/onboarding/MeasurementScreen'
 const Onboarding5 = () => {
   const { updateQuestionnaire } = useQuestionnaire();
 
-
-
-
-
-
   return (
     <SafeAreaView style={{height:"100%"}} >
       <View style={styles.container}>
@@ -90,6 +85,7 @@ const styles = StyleSheet.create({
       borderColor:Colors.background
   },
   buttonText: {
+    fontFamily:'productSans',
       fontSize: 18,
       color: Colors.text,
   },

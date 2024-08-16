@@ -1,7 +1,7 @@
 interface Brand {
     brand_name: string;
     brand_logo: string;
-  }
+}
 
   
 export const brands: Brand[]= [

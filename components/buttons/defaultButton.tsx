@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
         borderRadius:50,
         borderWidth: 2,
         marginVertical:7,
+        height:"auto",
 
-        height:'auto',
         flexDirection:'row',
         gap:5,
         justifyContent:'center',

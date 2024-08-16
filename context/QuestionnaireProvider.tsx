@@ -36,7 +36,7 @@ const defaultState: QuestionnaireContextType = {
         women: null,
     },
     fit: 'True to Size',
-    location: '',
+    location: 'India',
     updateQuestionnaire: () => {},
 };
 

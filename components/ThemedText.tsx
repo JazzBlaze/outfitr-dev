@@ -6,7 +6,7 @@ import { Text, type TextProps, StyleSheet } from 'react-native';
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?: 'default' | 'appTitle' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  type?:'header'| 'default' | 'appTitle' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
 };
 
 export function ThemedText({
@@ -28,6 +28,7 @@ export function ThemedText({
         type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
         type === 'subtitle' ? styles.subtitle : undefined,
         type === 'link' ? styles.link : undefined,
+        type === 'header' ? styles.header : undefined,
         style,
       ]}
       {...rest}
@@ -43,10 +44,11 @@ const styles = StyleSheet.create({
     
   },
   defaultSemiBold: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: 'semibold',
-    fontFamily:'productSans'
+    fontSize: 22,
+    lineHeight: 22,
+    fontWeight: 'bold',
+    fontFamily:'productSans',
+    marginVertical:10
   },
   appTitle:{
     fontSize: 80,
@@ -60,6 +62,13 @@ const styles = StyleSheet.create({
     fontFamily:'productSans',
     letterSpacing:0.5,
   },
+  header:{
+    fontSize: 28,
+    lineHeight: 28,
+    fontFamily:'productSans',
+    fontWeight: 'semibold',
+
+  },
   subtitle: {
     fontSize: 16,
     color:Colors.subText,
@@ -67,8 +76,9 @@ const styles = StyleSheet.create({
   },
   link: {
     lineHeight: 30,
-    fontSize: 16,
-    color: '#0a7ea4',
+    fontSize: 14,
+    textDecorationLine:"underline",
+    color: Colors.text,
     fontFamily:'productSans'
   },
 });
