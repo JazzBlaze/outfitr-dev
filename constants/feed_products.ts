@@ -49,16 +49,7 @@ export const feed_products: FeedProduct[] = [
     fit: 'relaxed fit',
     sub_category: 'cargo pants',
   },
-  {
-    _id: '66bc6c8a31578af80eefc3ee',
-    brand: 'Urban Monkey',
-    cover_image:
-      'https://www.urbanmonkey.com/cdn/shop/files/legacy-acid-wash-boxy-tshirt-01.jpg?v=1711853292&width=720',
-    productName: 'Legacy T-shirt // 002',
-    price: 1500,
-    fit: 'oversized fit',
-    sub_category: 'oversized T-shirt',
-  },
+
   {
     _id: '66bc6c8a31578af80eefc3ef',
     brand: 'Urban Monkey',
@@ -78,6 +69,16 @@ export const feed_products: FeedProduct[] = [
     price: 9695,
     fit: 'regular',
     sub_category: 'shoes',
+  },
+  {
+    _id: '66bc6c8a31578af80eefc3ee',
+    brand: 'Urban Monkey',
+    cover_image:
+      'https://www.urbanmonkey.com/cdn/shop/files/legacy-acid-wash-boxy-tshirt-01.jpg?v=1711853292&width=720',
+    productName: 'Legacy T-shirt // 002',
+    price: 1500,
+    fit: 'oversized fit',
+    sub_category: 'oversized T-shirt',
   },
   {
     _id: '66bc6c8a31578af80eefc3f1',
